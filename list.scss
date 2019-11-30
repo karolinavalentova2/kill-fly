@@ -1,0 +1,38 @@
+$yellow-color: #fba81e;
+$green-color: #45b798;
+$grey-color: #373948;
+$dark-grey-color: #272a38;
+$red-color: #ef4d4e;
+$white-color: #fff;
+
+$font-stack: 'Roboto', sans-serif;
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  height: 5rem;
+  width: 100vw;
+  background: $green-color;
+
+  h1 {
+    font-family: $font-stack;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    color: $white-color;
+  }
+}
+
+section {
+  height: 5rem;
+  width: 100vw;
+  background: $dark-grey-color;
+  display: flex;
+
+  div {
+    display: flex;
+  }
+}

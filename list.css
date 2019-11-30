@@ -1,0 +1,28 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  height: 5rem;
+  width: 100vw;
+  background: #45b798;
+}
+header h1 {
+  font-family: "Roboto", sans-serif;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  color: #fff;
+}
+
+section {
+  height: 5rem;
+  width: 100vw;
+  background: #272a38;
+  display: flex;
+}
+section div {
+  display: flex;
+}
+
+/*# sourceMappingURL=list.css.map */
