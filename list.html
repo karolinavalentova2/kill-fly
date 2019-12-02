@@ -11,32 +11,31 @@
     <header>
         <h1>Fly smacker - User's list</h1>
     </header>
-    <section>
-        <div class="sort-name">
-            <h3>Name</h3>
-            <span class="arrow-svg"></span>
-        </div>
-        <div class="sort-email">
-            <h3>Email</h3>
-            <span class="arrow-svg"></span>
-        </div>
-        <div class="sort-id">
-            <h3>ID</h3>
-            <span class="arrow-svg"></span>
-        </div>
-        <div class="sort-score">
-            <h3>Score</h3>
-            <span class="arrow-svg"></span>
-        </div>
-        <div class="edit">
-            <h3>Edit</h3>
-        </div>
-        <div class="reset">
-            <h3>Reset</h3>
-            <span class="reset-svg"></span>
-        </div>
-    </section>
-
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name<span id="nameArrowSVG" class="table-arrow-svg"></span></th>
+                    <th>Email<span id="emailArrowSVG" class="table-arrow-svg"></span></th>
+                    <th>ID<span id="idArrowSVG" class="table-arrow-svg"></span></th>
+                    <th>Score<span id="scoreArrowSVG" class="table-arrow-svg"></span></th>
+                    <th>Edit</th>
+                    <th>Refresh<span id="tableRefreshSVG"></span></th>
+                </tr>
+            </thead>
+            <tbody id="entriesContainer"></tbody>
+        </table>
+    </main>
     <script src="list.js"></script>
 </body>
+<template id="entryTemplate">
+    <tr>
+        <td>User name</td>
+        <td>email@gmail.com</td>
+        <td>12</td>
+        <td>300</td>
+        <td>Delete</td>
+        <td></td>
+    </tr>
+</template>
 </html>

@@ -1,6 +1,8 @@
 html, body {
   margin: 0;
   padding: 0;
+  font-family: "Roboto", sans-serif;
+  background: #373948;
 }
 
 header {
@@ -9,20 +11,41 @@ header {
   background: #45b798;
 }
 header h1 {
-  font-family: "Roboto", sans-serif;
   margin-block-start: 0;
   margin-block-end: 0;
   color: #fff;
 }
 
-section {
-  height: 5rem;
+table {
+  border-spacing: 0;
   width: 100vw;
-  background: #272a38;
-  display: flex;
+  color: #fff;
 }
-section div {
-  display: flex;
+table thead {
+  height: 5rem;
+  background: #272a38;
+  width: 100vw;
+}
+table thead th {
+  text-align: start;
+  height: 4rem;
+}
+table tbody {
+  background: #373948;
+}
+table tbody tr {
+  height: 3rem;
+}
+table tbody td {
+  border-bottom: 1px solid #45b798;
+}
+
+#arrowSVG {
+  width: 1rem;
+}
+
+#refreshSVG {
+  width: 2rem;
 }
 
 /*# sourceMappingURL=list.css.map */
