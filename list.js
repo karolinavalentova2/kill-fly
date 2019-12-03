@@ -73,9 +73,17 @@ function getAllEntries() {
 //     //TODO: This should act as a trigger, must be aware of the position of the button as well (delete/restore)
 // }
 
-function addNewEntryToHTML() {
+function addNewEntryToHTML(entry) {
     const entryTemplate = document.getElementById('entryTemplate');
     const newEntryTemplate = entryTemplate.content.cloneNode(true);
+
+    newEntryTemplate.firstElementChild.children[0].textContent = entry.name;
+    newEntryTemplate.firstElementChild.children[1].textContent = entry.email;
+    newEntryTemplate.firstElementChild.children[2].textContent = entry.id;
+    newEntryTemplate.firstElementChild.children[3].textContent = entry.score;
+    newEntryTemplate.firstElementChild.children[4].children[0].children[2].innerHTML = entry.edit;
+
+
     // const deleteButton = newEntryTemplate.firstElementChild.children[4];
     // deleteButton.innerHTML = `<span class="user-status"><span>Active</span>${SVGS.toggleSVG}</span>`;
 
