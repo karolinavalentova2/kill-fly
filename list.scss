@@ -34,7 +34,7 @@ table {
 
   thead {
     height: 5rem;
-    background: #272a38;
+    background: $dark-grey-color;
     width: 100vw;
 
     th {
@@ -48,10 +48,71 @@ table {
 
     tr {
       height: 3rem;
-    }
 
     td {
       border-bottom: 1px solid $green-color;
+
+      .switch {
+        position: relative;
+        display: inline-block;
+        width: 120px;
+        height: 28px;
+
+        input {
+          width: 0;
+          height: 0;
+
+          &:checked + .slider {
+            background-color: $red-color;
+
+            &:before {
+              -webkit-transform: translateX(90px);
+              -ms-transform: translateX(90px);
+              transform: translateX(90px);
+            }
+          }
+        }
+
+        .slider {
+          position: absolute;
+          cursor: pointer;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: $yellow-color;
+          -webkit-transition: .4s;
+          transition: .4s;
+          border-radius: 34px;
+
+          &:before {
+            position: absolute;
+            content: "";
+            height: 20px;
+            width: 20px;
+            left: 4px;
+            bottom: 4px;
+            background: $dark-grey-color;
+            -webkit-transition: .4s;
+            transition: .4s;
+            border-radius: 50%;
+          }
+        }
+
+        .text {
+          color: $dark-grey-color;
+          font-size: 1rem;
+          font-weight: bold;
+          position: absolute;
+          width: inherit;
+          height: inherit;
+          left: 0;
+          top: 4px;
+          text-align: center;
+          vertical-align: middle;
+        }
+      }
+    }
     }
   }
 }
@@ -62,4 +123,14 @@ table {
 
 #refreshSVG {
   width: 2rem;
+}
+
+.animate {
+  animation: toggle 1.5s ease-in-out 1;
+}
+
+@keyframes toggle {
+  to {
+    transform: translateX(160px);
+  }
 }
