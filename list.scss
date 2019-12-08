@@ -58,6 +58,10 @@ table {
         width: 120px;
         height: 28px;
 
+        &:hover {
+          cursor: pointer;
+        }
+
         input {
           width: 0;
           height: 0;
@@ -117,8 +121,12 @@ table {
   }
 }
 
-#arrowSVG {
+.arrowSVG {
   width: 1rem;
+
+  &.desc {
+    transform: rotate(180deg);
+  }
 }
 
 #refreshSVG {

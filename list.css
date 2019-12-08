@@ -45,6 +45,9 @@ table tbody tr td .switch {
   width: 120px;
   height: 28px;
 }
+table tbody tr td .switch:hover {
+  cursor: pointer;
+}
 table tbody tr td .switch input {
   width: 0;
   height: 0;
@@ -94,8 +97,11 @@ table tbody tr td .switch .text {
   vertical-align: middle;
 }
 
-#arrowSVG {
+.arrowSVG {
   width: 1rem;
+}
+.arrowSVG.desc {
+  transform: rotate(180deg);
 }
 
 #refreshSVG {
