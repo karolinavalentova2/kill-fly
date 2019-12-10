@@ -13,6 +13,7 @@ signUpForm.addEventListener("submit", e => {
 
 function post() {
     const data = {
+      email: signUpForm.elements.name.value,
       email: signUpForm.elements.email.value,
       password: signUpForm.elements.password.value
     };

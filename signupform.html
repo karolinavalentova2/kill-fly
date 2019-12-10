@@ -7,41 +7,27 @@
     <title>Document</title>
     <link rel="stylesheet" href="form.css">
     <link rel="stylesheet" href="soup.css">
-    <link rel="stylesheet" href="menu.css">
 </head>
 <body>
-    <div class="navbar">
-        <img src="http://petragergely.dk/kea/imgs/flylogo.png" alt="logo" height="80" id="logo">
-        <div id="slogan">
-          <p>More than 300 games for 9-year olds</p>
-        </div>
-        <div class="menu">
-          <a href="#">About us</a>
-          <a href="#">Games</a>
-          <a href="#">Shop</a>
-          <a href="#" id="login">Log in</a>
-        </div>
-          <div id="mobileMenu">
-        </div>
-      </div>
       <!-- this is the dark overlay over the game -->
       <div class="signUpWrapper">
           <!-- this is the actual wrapper and size of the form and desc. -->
           <div class="contentWrapper">
-      <h1>Amazing score <span id="username">username</span>!</h1>
+      <h1>Amazing score!</h1>
       <p>You scored <span id="points">x</span> points + <span id="timerPoints">x</span> timer points! That's AMAZING!</p>
       <p>Sign up, so we can save your progress:</p>
       <form id ="signUp">
-            <label for="email">Your e-mail address:</label><br>
-            <input type="text" name="email" placeholder="Your e-mail address" required><br>
-            <label for="password">Your password:</label><br>
-            <input type="password" name="password" placeholder="Your password" required><br>
-            <input type="checkbox" name="newsletter"> <label for="newsletter">Can we send you newsletter?</label><br>
-            <button type="submit" class="signUpBtn">Sign up <span id="continuePlaying">and continue playing</span></button>
+        <label for="name">Your username:</label><br>
+        <input type="text" name="name" required><br>
+        <label for="email">Your e-mail address:</label><br>
+        <input type="text" name="email" required><br>
+        <label for="password">Your password:</label><br>
+        <input type="password" name="password" required><br>
+        <input type="checkbox" name="newsletter"> <label for="newsletter">Can we send you newsletter?</label><br>
+        <button type="submit" class="signUpBtn">Sign up <span id="continuePlaying">and continue playing</span></button>
       </form>
       </div>
       </div>
       <script src="signupform.js"></script>
-      <script src="menu.js"></script>
 </body>
 </html>
