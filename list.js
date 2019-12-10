@@ -22,7 +22,7 @@ async function loadSVG() {
         SVGS = {
             arrowBTN: await (await fetch("./assets/arrow.svg")).text(),
             refreshBTN: await (await fetch("./assets/reset.svg")).text(),
-            // toggleSVG: await (await fetch("./assets/toggle.svg")).text(),
+            preloaderSVG: await (await fetch("./assets/preloader.svg")).text(),
         };
 
     } catch(error) {
@@ -31,8 +31,9 @@ async function loadSVG() {
 }
 
 function doSetupIcons() {
-    // document.getElementById('nameArrowSVG').innerHTML = SVGS.arrowBTN;
     document.getElementById('tableRefreshSVG').innerHTML = SVGS.refreshBTN;
+    document.getElementById('preloader-insert').innerHTML = SVGS.preloaderSVG;
+
 
     const arrowSVGS = document.getElementsByClassName('table-arrow-svg');
     Array.from(arrowSVGS).forEach((element, index) =>
@@ -131,7 +132,7 @@ function getAllEntries() {
 }
 
 function updateUser(userInfo) {
-    fetch(`https://smackfly-2fd1.restdb.io/rest/users-fly-smacker/${userInfo.id}`, {
+    fetch(`https://smackfly-2fd1.restdb.io/rest/users-fly-smacker/${userInfo._id}`, {
         method: "put",
         headers: {
             "Content-Type": "application/json; charset=utf-8",
@@ -139,7 +140,7 @@ function updateUser(userInfo) {
             "cache-control": "no-cache",
             // "Access-Control-Allow-Origin": "*",
         },
-        body: userInfo,
+        body: JSON.stringify(userInfo),
         //mode: "no-cors",
     })
         .then(e => {
@@ -149,15 +150,8 @@ function updateUser(userInfo) {
             console.log(e);
         });
 }
-// function doAnimateDeleteButton(button) {
-//     button.children[2].classList.add('animate');
-//     setTimeout(() => {
-//         button.children[2].classList.remove('animate');
-//     }, 1600);
-//
-//     //TODO: Change the button style to deleted by adding some class to it (smoothen with transition)
-//     //TODO: This should act as a trigger, must be aware of the position of the button as well (delete/restore)
-// }
+
+
 function doToggleUserState(userInfo, checkbox) {
     checkbox.checked = !!checkbox.checked;
     userInfo.edit = !!checkbox.checked;
@@ -181,20 +175,6 @@ function addNewEntryToHTML(entry) {
     };
 
     newEntryTemplate.firstElementChild.children[4].children[0].children[2].textContent = entry.edit ? 'Disabled' : 'Active';
-
-    // const deleteButton = newEntryTemplate.firstElementChild.children[4];
-    // deleteButton.innerHTML = `<span class="user-status"><span>Active</span>${SVGS.toggleSVG}</span>`;
-
-    // const deleteButtonTrigger = deleteButton.firstElementChild.children[1];
-    // const deleteButtonTriggerText = deleteButton.firstElementChild.children[0];
-
-    // deleteButtonTriggerText.onclick = () => {
-    //     doAnimateDeleteButton(deleteButtonTrigger);
-    // };
-    // deleteButtonTrigger.onclick = () => {
-    //     doAnimateDeleteButton(deleteButtonTrigger);
-    // };
-    // newEntryTemplate.firstElementChild.children[4].firstElementChild.innerHTML = entryUserStatus.textContent;
 
     document.getElementById('entriesContainer').appendChild(newEntryTemplate);
 }
