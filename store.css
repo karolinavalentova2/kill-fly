@@ -47,6 +47,73 @@
   display: none;
 }
 
+.store-main-container {
+  background: #272a38;
+  min-height: 100vh;
+  width: 100%;
+}
+.store-main-container h1 {
+  color: #FCA91F;
+  font-family: "Gloria Hallelujah", sans-serif;
+  text-align: center;
+  font-size: 4rem;
+}
+.store-main-container .section-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1rem 7vw;
+  justify-content: center;
+}
+.store-main-container .section-container section {
+  background: #373948;
+  display: inline-block;
+  text-align: center;
+  width: 25rem;
+  min-height: 25rem;
+  height: fit-content;
+  margin: 1.5rem;
+  border: 1rem #373948;
+  border-radius: 2rem;
+  padding: 1rem 3rem;
+}
+.store-main-container .section-container section .smacker-img {
+  width: 7rem;
+}
+.store-main-container .section-container section h5 {
+  font-size: 1.5rem;
+  color: #FCA91F;
+  font-family: "Gloria Hallelujah", sans-serif;
+  margin: 0.5rem 0;
+  text-align: left;
+}
+.store-main-container .section-container section p {
+  text-align: left;
+  font-family: "Roboto", sans-serif;
+  color: white;
+}
+.store-main-container .section-container section .price-container {
+  display: flex;
+  justify-content: space-between;
+}
+.store-main-container .section-container section .price-container div {
+  font-size: 2rem;
+  color: #FCA91F;
+  font-family: "Gloria Hallelujah", sans-serif;
+  margin: 0.5rem 0;
+}
+.store-main-container .section-container section .price-container button {
+  width: 9rem;
+  height: 3rem;
+  align-self: center;
+  border-radius: 0.5rem;
+  background: #45B899;
+  border: 0;
+  color: white;
+  font-family: "Gloria Hallelujah", sans-serif;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 800px) {
   .navbar {
     grid-template-columns: 1fr;
