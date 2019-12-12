@@ -1,4 +1,67 @@
+
 .contentWrapper {
-    max-width: 600px;
+    width: 780px;
     margin: 0 auto;
+}
+
+.contentWrapper > h1 {
+    font-size: 5em;
+}
+
+.contentWrapper > p {
+    font-size: 1.5em;
+}
+
+.checkboxWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+form {
+    margin: 50 auto;
+}
+
+input {
+    -webkit-appearance: none;
+    outline: none;
+    border: 1px solid #707070;
+    height: 85px;
+    width: 100%;
+    border-radius: 15px;
+    background: white;
+}
+
+input[type="checkbox"] {
+    width: 86px;
+    height: 86px;
+}
+
+label {
+    color: #9D9D9D;
+    font-family: "Gloria Hallelujah", sans-serif;
+    font-size: 1.8em;
+}
+
+label[for="newsletter"] {
+    color: white;
+}
+
+button[type="submit"] {
+    -webkit-appearance: unset;
+    outline: none;
+    background-color: #45B899;
+    width: 100%;
+    height: 100px;
+    font-family: "Gloria Hallelujah", sans-serif;
+    color: white;
+    font-size: 2.5em;
+    border: none;
+    border-radius: 15px;
+    transition: .3s ease-in-out;
+}
+
+button[type="submit"]:hover {
+    background-color: #5BCBAD;
+    cursor: pointer;
 }

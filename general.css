@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+h1 {
+    font-family: "Gloria Hallelujah", sans-serif;
+    color: white;
+}
+
+p{
+    font-family: "Gloria Hallelujah", sans-serif;
+    color: white;
+}
+
+a {
+    font-size: 1.8em;
+    color: #5BCBAD;
+    font-family: "Gloria Hallelujah", sans-serif;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+}
+
+/* --- TEXT ALIGNMENT --- */
+
+.centered {
+    text-align: center;
+}
