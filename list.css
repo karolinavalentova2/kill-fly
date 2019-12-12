@@ -117,18 +117,21 @@ main #refreshSVG {
   width: 1.5rem;
   margin-left: 0.5rem;
 }
-main .preloader-container {
-  width: 100vw;
-  height: 6rem;
-  position: absolute;
-  margin-top: 22rem;
+main #preloader-container {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.6);
 }
-main .preloader-container #preloader-insert {
+main #preloader-container #preloader-insert {
   width: 5rem;
-  margin: 0 auto;
+  margin: 22rem auto 0 auto;
   animation: rotate 2s linear infinite;
 }
-main .preloader-container #preloader-insert #preloaderSVG {
+main #preloader-container #preloader-insert #preloaderSVG {
   visibility: hidden;
 }
 @keyframes rotate {
@@ -136,7 +139,7 @@ main .preloader-container #preloader-insert #preloaderSVG {
     transform: rotate(360deg);
   }
 }
-main .preloader-container #preloader-insert svg path {
+main #preloader-container #preloader-insert svg path {
   stroke-dasharray: 450, 550;
   stroke-dashoffset: 1000;
   animation: dash 2s linear infinite;
@@ -197,8 +200,9 @@ main .aside-menu ul li div div.disabled {
   margin: auto;
   height: fit-content;
   padding: 3rem;
-  background: #272a38;
+  background: #1a1d26;
   color: white;
+  border: 0.1rem solid #ef4d4e;
 }
 #modal .modal-content #closeModal {
   position: absolute;
@@ -207,6 +211,9 @@ main .aside-menu ul li div div.disabled {
   font-size: 3rem;
   cursor: pointer;
 }
+#modal .modal-content #closeModal:hover {
+  color: #ef4d4e;
+}
 #modal .modal-content p {
   color: #ef4d4e;
 }
@@ -214,7 +221,7 @@ main .aside-menu ul li div div.disabled {
   padding: 0.5rem 1rem;
   background: #ef4d4e;
   border: none;
-  color: #272a38;
+  color: #1a1d26;
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
@@ -223,10 +230,15 @@ main .aside-menu ul li div div.disabled {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  border-bottom: 1px solid #45b798;
 }
 
 .showModal {
   display: block !important;
+}
+
+.active-filter-btn {
+  color: white !important;
 }
 
 /*# sourceMappingURL=list.css.map */

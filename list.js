@@ -7,12 +7,14 @@ let SortBY = {
     lastSortingMethod: 'ASC',
 };
 let preloader;
+let filterButtons;
 
 async function doStart() {
     try {
         await loadSVG();
         doSetupIcons();
         getAllEntries();
+        doRegisterFilterButtons();
     } catch (e) {
         console.error('Cannot start: ' + e.message);
     }
@@ -32,6 +34,32 @@ async function loadSVG() {
     }
 }
 
+function doShowFilteredEntries(filterBy) {
+
+    Array.from(filterButtons).forEach( (button) => {
+        button.children[1].classList.remove('active-filter-btn');
+    });
+
+    const filterCondition = (filterBy.textContent === 'Disabled');
+    const filteredUsers = entries.filter(entry => {
+        if(entry.edit === filterCondition) return entry;
+    });
+
+    doClearEntriesTable();
+    doReloadAllEntries(filteredUsers);
+
+    filterBy.classList.add('active-filter-btn')
+}
+
+function doRegisterFilterButtons() {
+    filterButtons = document.getElementsByClassName('filterButton');
+    Array.from(filterButtons).forEach( (button) => {
+        button.onclick = () => {
+            doShowFilteredEntries(button.children[1]);
+        }
+    });
+}
+
 function doShowUserRemoveModal(userInfo) {
     const closeModalButton = document.getElementById('closeModal');
     const modalBody = closeModalButton.parentElement;
@@ -43,7 +71,10 @@ function doShowUserRemoveModal(userInfo) {
     };
 
     const { id, name, email, score } = userInfo;
-    modalBody.children[3].textContent = `${ id } | ${name ? name : 'N/A'} | ${email ? email : 'N/A'} | ${score ? score : 'N/A'}`;
+    modalBody.children[2].children[1].firstElementChild.children[0].textContent = `${ id }`;
+    modalBody.children[2].children[1].firstElementChild.children[1].textContent = `${name ? name : 'N/A'}`;
+    modalBody.children[2].children[1].firstElementChild.children[2].textContent = `${email ? email : 'N/A'}`;
+    modalBody.children[2].children[1].firstElementChild.children[3].textContent = `${score ? score : 'N/A'}`;
 
     modalBody.children[4].onclick = () => {
         deleteUser(userInfo);
@@ -159,6 +190,7 @@ function getAllEntries() {
 }
 
 function updateUser(userInfo) {
+    doShowPreloader();
     fetch(`https://smackfly-2fd1.restdb.io/rest/users-fly-smacker/${userInfo._id}`, {
         method: "put",
         headers: {
@@ -171,7 +203,8 @@ function updateUser(userInfo) {
         //mode: "no-cors",
     })
         .then(e => {
-            console.log('User updated')
+            console.log('User updated');
+            doHidePreloader();
         })
         .catch(e => {
             console.log(e);
@@ -179,6 +212,7 @@ function updateUser(userInfo) {
 }
 
 function deleteUser(userInfo) {
+    doShowPreloader();
     fetch(`https://smackfly-2fd1.restdb.io/rest/users-fly-smacker/${userInfo._id}`, {
         method: "delete",
         headers: {
@@ -194,6 +228,7 @@ function deleteUser(userInfo) {
             doClearEntriesTable();
             getAllEntries();
             doCloseUserRemoveModal();
+            doHidePreloader();
         })
         .catch(e => {
             console.log(e);
@@ -214,9 +249,9 @@ function addNewEntryToHTML(entry) {
     const newEntryTemplate = entryTemplate.content.cloneNode(true);
     const toggle = newEntryTemplate.firstElementChild.children[4].children[0].children[0];
     const deleteButton = newEntryTemplate.firstElementChild.children[5].children[0];
-    newEntryTemplate.firstElementChild.children[0].textContent = entry.name;
-    newEntryTemplate.firstElementChild.children[1].textContent = entry.email;
-    newEntryTemplate.firstElementChild.children[2].textContent = entry.id;
+    newEntryTemplate.firstElementChild.children[0].textContent = entry.id;
+    newEntryTemplate.firstElementChild.children[1].textContent = entry.name;
+    newEntryTemplate.firstElementChild.children[2].textContent = entry.email;
     newEntryTemplate.firstElementChild.children[3].textContent = entry.score;
     toggle.checked = entry.edit;
 
@@ -229,20 +264,10 @@ function addNewEntryToHTML(entry) {
     deleteButton.innerHTML = SVGS.trashbinSVG;
     deleteButton.onclick = () => {
         doShowUserRemoveModal(entry);
-        // TODO; Ask the user if he's sure he wants to delete the entry then if answer is yes call deleteUser
-        // deleteUser(entry);
     };
 
     document.getElementById('entriesContainer').appendChild(newEntryTemplate);
 }
-
-// function doShowRemoveModal() {
-//     const modalTemplate = document.getElementById('modalRemoveUserTemplate');
-//     const newModalTemplate = modalTemplate.content.cloneNode(true);
-//
-//     document.getElementById('entriesContainer').appendChild(newModalTemplate);
-//
-// }
 
 function doClearEntriesTable() {
     const parent = document.getElementById('entriesContainer');
@@ -258,12 +283,16 @@ function doReloadAllEntries(newArray) {
 }
 
 function doShowPreloader() {
+    const background = document.getElementById('preloader-container');
     preloader = document.getElementById('preloaderSVG');
     preloader.style.visibility = 'visible';
+    background.style.zIndex = '1';
 }
 
 function doHidePreloader() {
+    const background = document.getElementById('preloader-container');
     preloader.style.visibility = 'hidden';
+    background.style.zIndex = '-1';
 }
 
 document.body.onload = doStart;

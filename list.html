@@ -12,45 +12,57 @@
         <h1>Fly smacker - User's list</h1>
     </header>
     <main>
-        <div class="preloader-container">
+        <div id="preloader-container">
             <div id="preloader-insert"></div>
         </div>
         <div id="modal">
             <div class="modal-content">
                 <span id="closeModal">&times;</span>
                 <h2>Remove the user?</h2>
-                <p>*This action can't be undone.</p>
-                <div class="modalUserInfo">User</div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
                 <br>
                 <button>Remove</button>
+                <p>*This action can't be undone!</p>
             </div>
         </div>
         <aside class="aside-menu">
             <ul>
                 <li>Refresh<span id="tableRefreshSVG"></span></li>
                 <li>Filter
-                    <div>
+                    <div class="filterButton">
                         <div></div>
                         <span>Active</span>
                     </div>
-                    <div>
+                    <div class="filterButton">
                         <div class="disabled"></div>
                         <span>Disabled</span>
                     </div>
                 </li>
             </ul>
-<!--            <h3>Refresh<span id="tableRefreshSVG"></span></h3>-->
-<!--            <h3>Filter-->
-<!--                <span>Active</span>-->
-<!--                <span>Disabled</span>-->
-<!--            </h3>-->
         </aside>
         <table>
             <thead>
                 <tr>
+                    <th>ID<span id="idArrowSVG" class="table-arrow-svg"></span></th>
                     <th>Name<span id="nameArrowSVG" class="table-arrow-svg"></span></th>
                     <th>Email<span id="emailArrowSVG" class="table-arrow-svg"></span></th>
-                    <th>ID<span id="idArrowSVG" class="table-arrow-svg"></span></th>
                     <th>Score<span id="scoreArrowSVG" class="table-arrow-svg"></span></th>
                     <th>Status</th>
                     <th>Remove</th>

@@ -5,6 +5,7 @@ $dark-grey-color: #272a38;
 $red-color: #ef4d4e;
 $white-color: #fff;
 $light-grey: #979c9e;
+$dark: #1a1d26;
 
 $font-stack: 'Roboto', sans-serif;
 
@@ -147,15 +148,18 @@ main {
     margin-left: 0.5rem;
   }
 
-  .preloader-container {
-    width: 100vw;
-    height: 6rem;
-    position: absolute;
-    margin-top: 22rem;
+  #preloader-container {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.6);
 
     #preloader-insert {
       width: 5rem;
-      margin: 0 auto;
+      margin: 22rem auto 0 auto;
       animation: rotate 2s linear infinite;
 
       #preloaderSVG {
@@ -242,8 +246,9 @@ main {
     margin: auto;
     height: fit-content;
     padding: 3rem;
-    background: $dark-grey-color;
+    background: $dark;
     color: white;
+    border: 0.1rem solid $red-color;
 
     #closeModal {
       position: absolute;
@@ -251,6 +256,8 @@ main {
       top: 0;
       font-size: 3rem;
       cursor: pointer;
+
+      &:hover {color: $red-color}
     }
 
     p {
@@ -261,7 +268,7 @@ main {
       padding: 0.5rem 1rem;
       background: $red-color;
       border: none;
-      color: $dark-grey-color;
+      color: $dark;
       font-size: 1rem;
       font-weight: bold;
       cursor: pointer;
@@ -271,10 +278,15 @@ main {
       width: 100%;
       display: flex;
       justify-content: space-between;
+      border-bottom: 1px solid #45b798;
     }
   }
 }
 
 .showModal {
   display: block!important;
+}
+
+.active-filter-btn {
+  color: white!important;
 }
