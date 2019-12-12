@@ -12,7 +12,6 @@ async function doStart() {
     try {
         await loadSVG();
         doSetupIcons();
-        doShowPreloader();
         getAllEntries();
     } catch (e) {
         console.error('Cannot start: ' + e.message);
@@ -25,6 +24,7 @@ async function loadSVG() {
             arrowBTN: await (await fetch("./assets/arrow.svg")).text(),
             refreshBTN: await (await fetch("./assets/reset.svg")).text(),
             preloaderSVG: await (await fetch("./assets/preloader.svg")).text(),
+            trashbinSVG: await (await fetch("./assets/trashbin.svg")).text(),
         };
 
     } catch(error) {
@@ -32,10 +32,33 @@ async function loadSVG() {
     }
 }
 
+function doShowUserRemoveModal(userInfo) {
+    const closeModalButton = document.getElementById('closeModal');
+    const modalBody = closeModalButton.parentElement;
+
+    modalBody.parentElement.classList.toggle('showModal');
+
+    closeModalButton.onclick = () => {
+        closeModalButton.parentElement.parentElement.classList.toggle('showModal')
+    };
+
+    const { id, name, email, score } = userInfo;
+    modalBody.children[3].textContent = `${ id } | ${name ? name : 'N/A'} | ${email ? email : 'N/A'} | ${score ? score : 'N/A'}`;
+
+    modalBody.children[4].onclick = () => {
+        deleteUser(userInfo);
+    }
+}
+
+function doCloseUserRemoveModal() {
+    const closeModalButton = document.getElementById('closeModal');
+    closeModalButton.parentElement.parentElement.classList.toggle('showModal')
+}
+
+
 function doSetupIcons() {
     document.getElementById('tableRefreshSVG').innerHTML = SVGS.refreshBTN;
     document.getElementById('preloader-insert').innerHTML = SVGS.preloaderSVG;
-
 
     const arrowSVGS = document.getElementsByClassName('table-arrow-svg');
     Array.from(arrowSVGS).forEach((element, index) =>
@@ -107,6 +130,7 @@ function sortBy(arrowSVG, typeOfSort) {
 }
 
 function getAllEntries() {
+    doShowPreloader();
     fetch("https://smackfly-2fd1.restdb.io/rest/users-fly-smacker", {
         method: "get",
         headers: {
@@ -122,7 +146,7 @@ function getAllEntries() {
                 if(data.length !== 0) {
                     entries = [...data];
                     data.forEach((entry) => {
-                        addNewEntryToHTML(entry)
+                        addNewEntryToHTML(entry);
                     });
                     doHidePreloader()
                 }
@@ -154,6 +178,28 @@ function updateUser(userInfo) {
         });
 }
 
+function deleteUser(userInfo) {
+    fetch(`https://smackfly-2fd1.restdb.io/rest/users-fly-smacker/${userInfo._id}`, {
+        method: "delete",
+        headers: {
+            "Content-Type": "application/json; charset=utf-8",
+            "x-apikey": "5de40f274658275ac9dc2152",
+            "cache-control": "no-cache",
+            // "Access-Control-Allow-Origin": "*",
+        },
+        body: JSON.stringify(userInfo),
+        //mode: "no-cors",
+    })
+        .then(e => {
+            doClearEntriesTable();
+            getAllEntries();
+            doCloseUserRemoveModal();
+        })
+        .catch(e => {
+            console.log(e);
+        });
+}
+
 
 function doToggleUserState(userInfo, checkbox) {
     checkbox.checked = !!checkbox.checked;
@@ -167,6 +213,7 @@ function addNewEntryToHTML(entry) {
     const entryTemplate = document.getElementById('entryTemplate');
     const newEntryTemplate = entryTemplate.content.cloneNode(true);
     const toggle = newEntryTemplate.firstElementChild.children[4].children[0].children[0];
+    const deleteButton = newEntryTemplate.firstElementChild.children[5].children[0];
     newEntryTemplate.firstElementChild.children[0].textContent = entry.name;
     newEntryTemplate.firstElementChild.children[1].textContent = entry.email;
     newEntryTemplate.firstElementChild.children[2].textContent = entry.id;
@@ -179,8 +226,23 @@ function addNewEntryToHTML(entry) {
 
     newEntryTemplate.firstElementChild.children[4].children[0].children[2].textContent = entry.edit ? 'Disabled' : 'Active';
 
+    deleteButton.innerHTML = SVGS.trashbinSVG;
+    deleteButton.onclick = () => {
+        doShowUserRemoveModal(entry);
+        // TODO; Ask the user if he's sure he wants to delete the entry then if answer is yes call deleteUser
+        // deleteUser(entry);
+    };
+
     document.getElementById('entriesContainer').appendChild(newEntryTemplate);
 }
+
+// function doShowRemoveModal() {
+//     const modalTemplate = document.getElementById('modalRemoveUserTemplate');
+//     const newModalTemplate = modalTemplate.content.cloneNode(true);
+//
+//     document.getElementById('entriesContainer').appendChild(newModalTemplate);
+//
+// }
 
 function doClearEntriesTable() {
     const parent = document.getElementById('entriesContainer');

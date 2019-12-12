@@ -15,6 +15,36 @@
         <div class="preloader-container">
             <div id="preloader-insert"></div>
         </div>
+        <div id="modal">
+            <div class="modal-content">
+                <span id="closeModal">&times;</span>
+                <h2>Remove the user?</h2>
+                <p>*This action can't be undone.</p>
+                <div class="modalUserInfo">User</div>
+                <br>
+                <button>Remove</button>
+            </div>
+        </div>
+        <aside class="aside-menu">
+            <ul>
+                <li>Refresh<span id="tableRefreshSVG"></span></li>
+                <li>Filter
+                    <div>
+                        <div></div>
+                        <span>Active</span>
+                    </div>
+                    <div>
+                        <div class="disabled"></div>
+                        <span>Disabled</span>
+                    </div>
+                </li>
+            </ul>
+<!--            <h3>Refresh<span id="tableRefreshSVG"></span></h3>-->
+<!--            <h3>Filter-->
+<!--                <span>Active</span>-->
+<!--                <span>Disabled</span>-->
+<!--            </h3>-->
+        </aside>
         <table>
             <thead>
                 <tr>
@@ -22,8 +52,8 @@
                     <th>Email<span id="emailArrowSVG" class="table-arrow-svg"></span></th>
                     <th>ID<span id="idArrowSVG" class="table-arrow-svg"></span></th>
                     <th>Score<span id="scoreArrowSVG" class="table-arrow-svg"></span></th>
-                    <th>Edit</th>
-                    <th>Refresh<span id="tableRefreshSVG"></span></th>
+                    <th>Status</th>
+                    <th>Remove</th>
                 </tr>
             </thead>
             <tbody id="entriesContainer"></tbody>
@@ -44,7 +74,9 @@
                 <span class="text">Active</span>
             </label>
         </td>
-        <td></td>
+        <td>
+            <span></span>
+        </td>
     </tr>
 </template>
 </html>

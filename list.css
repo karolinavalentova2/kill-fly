@@ -3,10 +3,10 @@ html, body {
   padding: 0;
   font-family: "Roboto", sans-serif;
   background: #373948;
+  overflow: hidden;
 }
 
 header {
-  height: 5rem;
   width: 100vw;
   background: #45b798;
 }
@@ -14,53 +14,63 @@ header h1 {
   margin-block-start: 0;
   margin-block-end: 0;
   color: #fff;
+  padding: 1rem 3rem;
 }
 
-table {
+main {
+  display: flex;
+}
+main table {
   border-spacing: 0;
-  width: 100vw;
+  width: 100%;
   color: #fff;
 }
-table thead {
+main table thead {
   height: 5rem;
   background: #272a38;
   width: 100vw;
 }
-table thead th {
+main table thead th {
   text-align: start;
-  height: 4rem;
+  vertical-align: bottom;
+  padding: 1rem 3rem;
 }
-table tbody {
+main table tbody {
   background: #373948;
 }
-table tbody tr {
+main table tbody tr {
   height: 3rem;
 }
-table tbody tr td {
+main table tbody tr td {
   border-bottom: 1px solid #45b798;
+  padding-left: 3rem;
 }
-table tbody tr td .switch {
+main table tbody tr td .trashbinSVG {
+  width: 1.2rem;
+  cursor: pointer;
+}
+main table tbody tr td .switch {
   position: relative;
   display: inline-block;
   width: 120px;
   height: 28px;
 }
-table tbody tr td .switch:hover {
+main table tbody tr td .switch:hover {
   cursor: pointer;
 }
-table tbody tr td .switch input {
+main table tbody tr td .switch input {
   width: 0;
   height: 0;
 }
-table tbody tr td .switch input:checked + .slider {
+main table tbody tr td .switch input:checked + .slider {
   background-color: #ef4d4e;
 }
-table tbody tr td .switch input:checked + .slider:before {
+main table tbody tr td .switch input:checked + .slider:before {
   -webkit-transform: translateX(90px);
   -ms-transform: translateX(90px);
   transform: translateX(90px);
 }
-table tbody tr td .switch .slider {
+main table tbody tr td .switch .slider {
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -72,7 +82,7 @@ table tbody tr td .switch .slider {
   transition: 0.4s;
   border-radius: 34px;
 }
-table tbody tr td .switch .slider:before {
+main table tbody tr td .switch .slider:before {
   position: absolute;
   content: "";
   height: 20px;
@@ -84,7 +94,7 @@ table tbody tr td .switch .slider:before {
   transition: 0.4s;
   border-radius: 50%;
 }
-table tbody tr td .switch .text {
+main table tbody tr td .switch .text {
   color: #272a38;
   font-size: 1rem;
   font-weight: bold;
@@ -96,30 +106,29 @@ table tbody tr td .switch .text {
   text-align: center;
   vertical-align: middle;
 }
-
-.arrowSVG {
-  width: 1rem;
+main .arrowSVG {
+  width: 0.7rem;
+  margin-left: 0.3rem;
 }
-.arrowSVG.desc {
+main .arrowSVG.desc {
   transform: rotate(180deg);
 }
-
-#refreshSVG {
-  width: 2rem;
+main #refreshSVG {
+  width: 1.5rem;
+  margin-left: 0.5rem;
 }
-
-.preloader-container {
+main .preloader-container {
   width: 100vw;
   height: 6rem;
   position: absolute;
   margin-top: 22rem;
 }
-.preloader-container #preloader-insert {
+main .preloader-container #preloader-insert {
   width: 5rem;
   margin: 0 auto;
   animation: rotate 2s linear infinite;
 }
-.preloader-container #preloader-insert #preloaderSVG {
+main .preloader-container #preloader-insert #preloaderSVG {
   visibility: hidden;
 }
 @keyframes rotate {
@@ -127,7 +136,7 @@ table tbody tr td .switch .text {
     transform: rotate(360deg);
   }
 }
-.preloader-container #preloader-insert svg path {
+main .preloader-container #preloader-insert svg path {
   stroke-dasharray: 450, 550;
   stroke-dashoffset: 1000;
   animation: dash 2s linear infinite;
@@ -136,6 +145,88 @@ table tbody tr td .switch .text {
   to {
     stroke-dashoffset: 0;
   }
+}
+main .aside-menu {
+  background: #272a38;
+  width: 13rem;
+  height: 100vh;
+}
+main .aside-menu ul {
+  list-style: none;
+  padding: 0 2rem;
+}
+main .aside-menu ul li {
+  padding: 3rem 0 2rem 0;
+  color: #fff;
+  font-weight: bold;
+  border-bottom: 1px solid #979c9e;
+}
+main .aside-menu ul li:nth-child(1) {
+  padding-top: 0;
+}
+main .aside-menu ul li div {
+  color: #979c9e;
+  display: flex;
+  margin: 0.5rem 0.3rem;
+  cursor: pointer;
+}
+main .aside-menu ul li div div {
+  background: #fba81e;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+}
+main .aside-menu ul li div div.disabled {
+  background: #ef4d4e;
+}
+
+#modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+#modal .modal-content {
+  position: relative;
+  width: 60vw;
+  margin: auto;
+  height: fit-content;
+  padding: 3rem;
+  background: #272a38;
+  color: white;
+}
+#modal .modal-content #closeModal {
+  position: absolute;
+  right: 1rem;
+  top: 0;
+  font-size: 3rem;
+  cursor: pointer;
+}
+#modal .modal-content p {
+  color: #ef4d4e;
+}
+#modal .modal-content button {
+  padding: 0.5rem 1rem;
+  background: #ef4d4e;
+  border: none;
+  color: #272a38;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+#modal .modal-content .modalUserInfo {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.showModal {
+  display: block !important;
 }
 
 /*# sourceMappingURL=list.css.map */
