@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css?family=Gloria+Hallelujah&display=swap");
+
+/* nav bar */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.navbar {
+  background-color: #373948;
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  grid-template-rows: 1;
+  grid-gap: 3em;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em;
+}
+
+#slogan > p {
+  color: white;
+  opacity: 0.5;
+  font-family: "Gloria Hallelujah", sans-serif;
+  font-size: 1.3em;
+  text-align: center;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu > a {
+  font-family: "Gloria Hallelujah", sans-serif;
+  color: white;
+  text-decoration: none;
+  font-size: 1.3em;
+  transition: 0.2s ease-in-out;
+}
+
+.menu > a:hover,
+#login:hover {
+  color: #45b899;
+}
+
+#login {
+  color: #fca91f;
+  transition: 0.2s ease-in-out;
+}
+
+#mobileMenuIcon {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  .navbar {
+    grid-template-columns: 1fr;
+    grid-template-rows: 3;
+    grid-gap: 1em;
+  }
+
+  .navbar > img {
+    margin: 0 auto;
+  }
+}
+
+@media all and (max-width: 450px) {
+  #mobileMenu {
+    width: 45px;
+    height: 45px;
+    margin: 0 auto;
+    background: url("http://petragergely.dk/kea/imgs/menu.png");
+    background-size: cover;
+  }
+
+  .menu {
+    display: none;
+  }
+}
+
+@media all and (max-width: 400px) {
+  .menu {
+    flex-direction: column;
+  }
+}
+/* main */
+body {
+  background-color: #272939;
+}
+.start_wrapper {
+  display: grid;
+}
+.start_wrapper > * {
+  grid-area: 1 / 1;
+}
+.startImg {
+  background-color: black;
+}
+.startImg img {
+  max-width: 100%;
+  max-height: 100%;
+  opacity: 0.4;
+}
+
+.headerText h1 {
+  font-family: "Gloria Hallelujah", sans-serif;
+  font-size: 3em;
+  margin-top: 5em;
+  color: white;
+  opacity: 0.9;
+  text-align: center;
+}
+.headerText {
+  width: 900px;
+  display: block;
+  margin: 0 auto;
+}
+
+.startBtn {
+  font-family: "Gloria Hallelujah", sans-serif;
+  font-size: 1.5em;
+  text-align: center;
+  color: white;
+  background-color: #45b899;
+  border: none;
+  width: 400px;
+  height: 45px;
+  border-radius: 10pt;
+  margin: auto;
+  margin-top: 500px;
+  opacity: 0.9;
+}
+/* user page */
+.userheader {
+  text-align: center;
+  color: #fca91f;
+  font-family: "Gloria Hallelujah", sans-serif;
+}
+#avatarImg {
+  border-radius: 50%;
+  max-width: 200px;
+  display: block;
+  margin: auto;
+}
+.userFields h3 {
+  color: #fca91f;
+  font-family: "Gloria Hallelujah", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+.userFields input {
+  width: 400px;
+  height: 45px;
+  border-radius: 9pt;
+  border: none;
+  margin: 0.8em;
+  background-color: #373948;
+  text-align: center;
+  color: #9d9d9d;
+}
+.userFields input::placeholder {
+  color: #9d9d9d;
+  font-family: "Gloria Hallelujah", sans-serif;
+  text-align: center;
+  font-size: 1em;
+  font-weight: bold;
+}
+.userFields {
+  padding-bottom: 1.5em;
+}
+.userWrapper {
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+.userBtn {
+  font-family: "Gloria Hallelujah", sans-serif;
+  font-size: 1.5em;
+  color: white;
+  background-color: #45b899;
+  border: none;
+  width: 400px;
+  height: 45px;
+  border-radius: 10pt;
+  border: none;
+}
