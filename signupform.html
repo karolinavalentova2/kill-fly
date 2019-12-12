@@ -1,33 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-    <link rel="stylesheet" href="form.css">
-    <link rel="stylesheet" href="soup.css">
-</head>
-<body>
-      <!-- this is the dark overlay over the game -->
-      <div class="signUpWrapper">
-          <!-- this is the actual wrapper and size of the form and desc. -->
-          <div class="contentWrapper">
-      <h1>Amazing score!</h1>
-      <p>You scored <span id="points">x</span> points + <span id="timerPoints">x</span> timer points! That's AMAZING!</p>
-      <p>Sign up, so we can save your progress:</p>
-      <form id ="signUp">
-        <label for="name">Your username:</label><br>
-        <input type="text" name="name" required><br>
-        <label for="email">Your e-mail address:</label><br>
-        <input type="text" name="email" required><br>
-        <label for="password">Your password:</label><br>
-        <input type="password" name="password" required><br>
-        <input type="checkbox" name="newsletter"> <label for="newsletter">Can we send you newsletter?</label><br>
-        <button type="submit" class="signUpBtn">Sign up <span id="continuePlaying">and continue playing</span></button>
-      </form>
+    <link rel="stylesheet" href="form.css" />
+    <link rel="stylesheet" href="soup.css" />
+    <link rel="stylesheet" href="overlay.css" />
+  </head>
+  <body>
+    <!-- this is the dark overlay over the game -->
+    <div class="overlayWrapper">
+      <!-- this is the actual wrapper and size of the form and desc. -->
+      <div class="contentWrapper">
+        <h1>Amazing score!</h1>
+        <p>You scored <span id="points">x</span> points + <span id="timerPoints">x</span> timer points! That's AMAZING!</p>
+        <p>Sign up, so we can save your progress:</p>
+        <form id="signUp">
+          <label for="name">Your username:</label><br />
+          <input type="text" name="name" required /><br />
+          <label for="email">Your e-mail address:</label><br />
+          <input type="text" name="email" required /><br />
+          <label for="password">Your password:</label><br />
+          <input type="password" name="password" required /><br />
+          <input type="checkbox" name="newsletter" /> <label for="newsletter">Can we send you newsletter?</label><br />
+          <button type="submit" class="signUpBtn">Sign up and continue playing</button>
+        </form>
       </div>
-      </div>
-      <script src="signupform.js"></script>
-</body>
+    </div>
+    <script src="signupform.js"></script>
+  </body>
 </html>

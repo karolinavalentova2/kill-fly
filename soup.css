@@ -21,3 +21,32 @@ span {
   font-family: "Gloria Hallelujah", sans-serif;
   font-size: 1.8em;
 }
+
+a {
+  font-family: "Gloria Hallelujah", sans-serif;
+  color: white;
+  text-decoration: none;
+  font-size: 1.8em;
+}
+
+button {
+  height: 86px;
+  color: white;
+  background: #45b899;
+  font-family: "Gloria Hallelujah", sans-serif;
+  -webkit-appearance: unset;
+  border: none;
+  outline: none;
+  font-size: 1.8em;
+  border-radius: 15px;
+  display: block;
+  margin: 50px auto;
+  text-decoration: none;
+  padding: 5px 5em;
+  transition: 0.3s ease-in-out;
+}
+
+button:hover {
+  cursor: pointer;
+  background: #69dcbd;
+}
