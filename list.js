@@ -6,11 +6,13 @@ let SortBY = {
     lastSortingOrderItem: null,
     lastSortingMethod: 'ASC',
 };
+let preloader;
 
 async function doStart() {
     try {
         await loadSVG();
         doSetupIcons();
+        doShowPreloader();
         getAllEntries();
     } catch (e) {
         console.error('Cannot start: ' + e.message);
@@ -122,6 +124,7 @@ function getAllEntries() {
                     data.forEach((entry) => {
                         addNewEntryToHTML(entry)
                     });
+                    doHidePreloader()
                 }
             }).catch(e => console.log(e));
         })
@@ -191,4 +194,14 @@ function doReloadAllEntries(newArray) {
         newArray.forEach(entry => addNewEntryToHTML(entry));
     }
 }
+
+function doShowPreloader() {
+    preloader = document.getElementById('preloaderSVG');
+    preloader.style.visibility = 'visible';
+}
+
+function doHidePreloader() {
+    preloader.style.visibility = 'hidden';
+}
+
 document.body.onload = doStart;

@@ -144,6 +144,10 @@ table {
     margin: 0 auto;
     animation: rotate 2s linear infinite;
 
+    #preloaderSVG {
+      visibility: hidden;
+    }
+
     @keyframes rotate {
       to {
         transform: rotate(360deg);

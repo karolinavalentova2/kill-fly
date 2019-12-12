@@ -119,6 +119,9 @@ table tbody tr td .switch .text {
   margin: 0 auto;
   animation: rotate 2s linear infinite;
 }
+.preloader-container #preloader-insert #preloaderSVG {
+  visibility: hidden;
+}
 @keyframes rotate {
   to {
     transform: rotate(360deg);
