@@ -1,0 +1,64 @@
+/* --- GENERAL OVERLAY --- */
+
+.overlayWrapper {
+  width: 100%;
+  height: 100vh;
+  background: #00000080;
+  padding: 50px 0;
+  display: flex;
+  align-items: center;
+}
+
+.overlayContent {
+  width: 780px;
+  background: #28293b;
+  border-radius: 15px;
+  margin: 0 auto;
+}
+
+.leaderboardWrapper > div {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  color: #9e9e9e;
+}
+
+.leaderboardWrapper > div > p {
+  padding: 0 0 0 50px;
+}
+
+.leaderboardWrapper > div > span {
+  padding: 0 50px 0 0;
+}
+
+.you {
+  color: #4dc8ff;
+}
+
+.overlayHeader {
+  background: linear-gradient(45deg, #373948, #28293b);
+  padding: 20px 0 20px 0;
+  border-radius: 15px 15px 0 0;
+}
+
+.overlayBtn {
+  height: 86px;
+  background: #45b899;
+  color: white;
+  font-family: "Gloria Hallelujah", sans-serif;
+  -webkit-appearance: unset;
+  border: none;
+  outline: none;
+  font-size: 1.8em;
+  padding: 5px 5em;
+  border-radius: 15px;
+  display: block;
+  margin: 50px auto;
+}
+/* nth child bg: 373948 */
+
+.leaderboardWrapper > div:nth-child(even) {
+  background-color: #373948;
+}
