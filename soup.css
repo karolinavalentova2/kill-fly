@@ -10,30 +10,19 @@
   text-align: center;
 }
 
-h1,
-h2 {
-  color: white;
-  font-family: "Gloria Hallelujah", sans-serif;
-}
-
 p,
-span {
-  font-family: "Gloria Hallelujah", sans-serif;
-  font-size: 1.8em;
+span, h1, h2, button {
+color: white;
+font-family: "Gloria Hallelujah", sans-serif; 
 }
 
-a {
-  font-family: "Gloria Hallelujah", sans-serif;
-  color: white;
-  text-decoration: none;
+p, span, a {
   font-size: 1.8em;
 }
 
 button {
   height: 86px;
-  color: white;
   background: #45b899;
-  font-family: "Gloria Hallelujah", sans-serif;
   -webkit-appearance: unset;
   border: none;
   outline: none;
@@ -50,11 +39,16 @@ button:hover {
   cursor: pointer;
   background: #69dcbd;
 }
-.signUpWrapper {
-    width: 100%;
-    height: 100vh;
-    background: #00000080;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
+a {
+  font-size: 1.8em;
+  color: #5BCBAD;
+  font-family: "Gloria Hallelujah", sans-serif;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+}
+
+a:hover {
+  color: #69dcbd;
 }

@@ -1,5 +1,4 @@
 /* --- GENERAL OVERLAY --- */
-
 .overlayWrapper {
   width: 100%;
   min-height: 100vh;
@@ -7,6 +6,19 @@
   padding: 50px 0;
   display: flex;
   align-items: center;
+}
+
+.overlayFormWrapper {
+  width: 780px;
+  margin: 0 auto;
+}
+
+.overlayFormWrapper > h1 {
+  font-size: 5em;
+}
+
+.overlayFormWrapper > p {
+  font-size: 1.5em;
 }
 
 .overlayContent {
@@ -75,5 +87,9 @@
 
 .mutedBtn {
   color: white;
+  background: none;
+}
+
+.mutedBtn:hover {
   background: none;
 }
