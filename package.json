@@ -1,0 +1,22 @@
+{
+  "name": "kill-fly",
+  "version": "1.0.0",
+  "description": "",
+  "main": "list.html",
+  "scripts": {
+    "test": "null"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karolinavalentova2/kill-fly.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/karolinavalentova2/kill-fly/issues"
+  },
+  "homepage": "https://github.com/karolinavalentova2/kill-fly#readme",
+  "dependencies": {
+    "toastr": "^2.1.4"
+  }
+}

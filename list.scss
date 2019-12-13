@@ -205,6 +205,7 @@ main {
 
         &:nth-child(1) {
           padding-top: 0;
+          cursor: pointer;
         }
 
         div {
@@ -289,4 +290,17 @@ main {
 
 .active-filter-btn {
   color: white!important;
+}
+
+// npm toast message, source: https://www.npmjs.com/package/toastr
+
+#toast-container > div {
+  -moz-box-shadow: 0 0 0 #999999!important;
+  -webkit-box-shadow: 0 0 0 #999999!important;
+  box-shadow: 0 0 0 #999999!important;
+  width: 30vw;
+}
+
+#toast-container.toast-top-center > div, #toast-container.toast-bottom-center > div {
+  width: 20rem!important;
 }

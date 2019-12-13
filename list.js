@@ -15,6 +15,7 @@ async function doStart() {
         doSetupIcons();
         getAllEntries();
         doRegisterFilterButtons();
+        doRegisterRefreshBtn();
     } catch (e) {
         console.error('Cannot start: ' + e.message);
     }
@@ -32,32 +33,6 @@ async function loadSVG() {
     } catch(error) {
         console.error('Cannot read svg file, reason: ' + error.message);
     }
-}
-
-function doShowFilteredEntries(filterBy) {
-
-    Array.from(filterButtons).forEach( (button) => {
-        button.children[1].classList.remove('active-filter-btn');
-    });
-
-    const filterCondition = (filterBy.textContent === 'Disabled');
-    const filteredUsers = entries.filter(entry => {
-        if(entry.edit === filterCondition) return entry;
-    });
-
-    doClearEntriesTable();
-    doReloadAllEntries(filteredUsers);
-
-    filterBy.classList.add('active-filter-btn')
-}
-
-function doRegisterFilterButtons() {
-    filterButtons = document.getElementsByClassName('filterButton');
-    Array.from(filterButtons).forEach( (button) => {
-        button.onclick = () => {
-            doShowFilteredEntries(button.children[1]);
-        }
-    });
 }
 
 function doShowUserRemoveModal(userInfo) {
@@ -158,6 +133,40 @@ function sortBy(arrowSVG, typeOfSort) {
     }
 
     SortBY.lastSortingOrderItem = arrowSVG;
+}
+
+function doShowFilteredEntries(filterBy) {
+
+    Array.from(filterButtons).forEach( (button) => {
+        button.children[1].classList.remove('active-filter-btn');
+    });
+
+    const filterCondition = (filterBy.textContent === 'Disabled');
+    const filteredUsers = entries.filter(entry => {
+        if(entry.edit === filterCondition) return entry;
+    });
+
+    doClearEntriesTable();
+    doReloadAllEntries(filteredUsers);
+
+    filterBy.classList.add('active-filter-btn')
+}
+
+function doRegisterFilterButtons() {
+    filterButtons = document.getElementsByClassName('filterButton');
+    Array.from(filterButtons).forEach( (button) => {
+        button.onclick = () => {
+            doShowFilteredEntries(button.children[1]);
+        }
+    });
+}
+
+function doRegisterRefreshBtn() {
+    const refreshBtn = document.getElementById('refreshBtn');
+    refreshBtn.onclick = () => {
+        doClearEntriesTable();
+        getAllEntries();
+    }
 }
 
 function getAllEntries() {
@@ -262,8 +271,14 @@ function addNewEntryToHTML(entry) {
     newEntryTemplate.firstElementChild.children[4].children[0].children[2].textContent = entry.edit ? 'Disabled' : 'Active';
 
     deleteButton.innerHTML = SVGS.trashbinSVG;
+
     deleteButton.onclick = () => {
-        doShowUserRemoveModal(entry);
+        if(entry.edit !== false) {
+            doShowUserRemoveModal(entry);
+        }
+        else {
+            doShowUserDeleteErrorToast();
+        }
     };
 
     document.getElementById('entriesContainer').appendChild(newEntryTemplate);
@@ -293,6 +308,29 @@ function doHidePreloader() {
     const background = document.getElementById('preloader-container');
     preloader.style.visibility = 'hidden';
     background.style.zIndex = '-1';
+}
+
+function doShowUserDeleteErrorToast() {
+    // source: https://www.npmjs.com/package/toastr
+    toastr.options = {
+        "closeButton": false,
+        "debug": false,
+        "newestOnTop": false,
+        "progressBar": false,
+        "positionClass": "toast-bottom-center",
+        "preventDuplicates": false,
+        "onclick": null,
+        "showDuration": "300",
+        "hideDuration": "1000",
+        "timeOut": "5000",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+    };
+
+    toastr["error"]("Only disabled user can be deleted");
 }
 
 document.body.onload = doStart;

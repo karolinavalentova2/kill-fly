@@ -166,6 +166,7 @@ main .aside-menu ul li {
 }
 main .aside-menu ul li:nth-child(1) {
   padding-top: 0;
+  cursor: pointer;
 }
 main .aside-menu ul li div {
   color: #979c9e;
@@ -239,6 +240,17 @@ main .aside-menu ul li div div.disabled {
 
 .active-filter-btn {
   color: white !important;
+}
+
+#toast-container > div {
+  -moz-box-shadow: 0 0 0 #999999 !important;
+  -webkit-box-shadow: 0 0 0 #999999 !important;
+  box-shadow: 0 0 0 #999999 !important;
+  width: 30vw;
+}
+
+#toast-container.toast-top-center > div, #toast-container.toast-bottom-center > div {
+  width: 20rem !important;
 }
 
 /*# sourceMappingURL=list.css.map */
