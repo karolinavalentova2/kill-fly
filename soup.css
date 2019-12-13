@@ -1,0 +1,54 @@
+/* random stuff that we need to sort out into their respective css files later */
+@import url("https://fonts.googleapis.com/css?family=Gloria+Hallelujah&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.centered {
+  text-align: center;
+}
+
+p,
+span, h1, h2, button {
+color: white;
+font-family: "Gloria Hallelujah", sans-serif; 
+}
+
+p, span, a {
+  font-size: 1.8em;
+}
+
+button {
+  height: 86px;
+  background: #45b899;
+  -webkit-appearance: unset;
+  border: none;
+  outline: none;
+  font-size: 1.8em;
+  border-radius: 15px;
+  display: block;
+  margin: 50px auto;
+  text-decoration: none;
+  padding: 5px 5em;
+  transition: 0.3s ease-in-out;
+}
+
+button:hover {
+  cursor: pointer;
+  background: #69dcbd;
+}
+
+a {
+  font-size: 1.8em;
+  color: #5BCBAD;
+  font-family: "Gloria Hallelujah", sans-serif;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+}
+
+a:hover {
+  color: #69dcbd;
+}
