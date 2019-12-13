@@ -5,7 +5,7 @@
 * {
   box-sizing: border-box;
   margin: 0;
-}
+} /* 
 
 .navbar {
   background-color: #373948;
@@ -84,11 +84,11 @@
   .menu {
     flex-direction: column;
   }
-}
+} */
 /* main */
-body {
+/* body {
   background-color: #272939;
-}
+} */
 /*
 .start_wrapper {
   display: flex;
@@ -170,7 +170,7 @@ body {
   display: block;
   margin: auto;
   text-align: center;
-}
+} /* 
 .userBtn {
   font-family: "Gloria Hallelujah", sans-serif;
   font-size: 1.5em;
@@ -181,4 +181,4 @@ body {
   height: 45px;
   border-radius: 10pt;
   border: none;
-}
+} */

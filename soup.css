@@ -6,17 +6,26 @@
   margin: 0;
 }
 
+body {
+  background-color: #272939;
+}
+
 .centered {
   text-align: center;
 }
 
 p,
-span, h1, h2, button {
-color: white;
-font-family: "Gloria Hallelujah", sans-serif; 
+span,
+h1,
+h2,
+button {
+  color: white;
+  font-family: "Gloria Hallelujah", sans-serif;
 }
 
-p, span, a {
+p,
+span,
+a {
   font-size: 1.8em;
 }
 
@@ -42,7 +51,7 @@ button:hover {
 
 a {
   font-size: 1.8em;
-  color: #5BCBAD;
+  color: #5bcbad;
   font-family: "Gloria Hallelujah", sans-serif;
   text-decoration: none;
   display: flex;
