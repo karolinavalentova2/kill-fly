@@ -1,0 +1,41 @@
+#avatarImg {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  display: block;
+  margin: auto;
+  background-image: url("img/profile.jpg");
+  background-size: cover;
+}
+
+legend {
+  color: #fca91f;
+  font-family: "Gloria Hallelujah", sans-serif;
+  text-align: left;
+  font-size: 1.3em;
+  margin: 50px 0 0 0;
+}
+
+.userFields input {
+  width: 600px;
+  height: 86px;
+  border-radius: 15px;
+  border: none;
+  display: block;
+  margin: 0.8em auto;
+  background-color: #373948;
+  text-align: center;
+  color: #9d9d9d;
+}
+
+#userInfo > fieldset {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  border: none;
+}
+.userWrapper {
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+}

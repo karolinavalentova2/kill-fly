@@ -14,6 +14,11 @@ body {
   text-align: center;
 }
 
+.yellow {
+  color: #fca91f;
+  margin: 50px 0;
+}
+
 p,
 span,
 h1,

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="form.css" rel="stylesheet" />
+    <link href="menu.css" rel="stylesheet" />
+    <link href="overlay.css" rel="stylesheet" />
+    <link href="soup.css" rel="stylesheet" />
+    <link href="start-screen.css" rel="stylesheet" />
+    <link href="user.css" rel="stylesheet" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="navbar">
+      <img src="http://petragergely.dk/kea/imgs/flylogo.png" alt="logo" height="80" id="logo" />
+      <div id="slogan">
+        <p>More than 300 games for 9-year olds</p>
+      </div>
+      <nav class="menu">
+        <a href="#">About us</a>
+        <a href="#">Games</a>
+        <a href="#">Shop</a>
+        <a href="#" id="login">Log in</a>
+      </nav>
+      <div id="mobileMenu"></div>
+    </div>
+    <h1 class="centered yellow">Your Profile</h1>
+    <div id="avatarImg"></div>
+    <div class="userWrapper">
+      <div class="userFields">
+        <form id="userInfo">
+          <fieldset>
+        <legend>Account information:</legend>
+          <label for="firstname">Your first name</label>
+          <input type="text" name="firstname" />
+          <label for="lastname">Your last name</label>
+          <input type="text" name="lastname" />
+          <label for="email">Your e-mail address</label>
+          <input type="text" name="email" /><br />
+          </fieldset>
+          <fieldset>
+        <legend>Change your password:</legend>
+          <input type="text" name="password" placeholder="Your password" /><br />
+          <input type="text" name="repeatpassword" placeholder="Confirm your password" /><br />
+          </fieldset>
+          <fieldset>
+        <legend>Update your billing information:</legend>
+          <input type="text" name="fullname" placeholder="Full name" /><br />
+          <input type="text" name="country" placeholder="Country" /><br />
+          <input type="text" name="state" placeholder="Country / State" /><br />
+          <input type="text" name="zip" placeholder="ZIP code" /><br />
+          <input type="text" name="city" placeholder="City" /><br />
+          <input type="text" name="adress" placeholder="Address" /><br />
+        </fieldset>
+      <button>Update profile</button>
+      </form>
+    </div>
+  </body>
+</html>
