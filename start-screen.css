@@ -89,12 +89,22 @@
 body {
   background-color: #272939;
 }
+/*
 .start_wrapper {
-  display: grid;
-}
+  display: flex;
+  flex-direction: column;
+} 
 .start_wrapper > * {
   grid-area: 1 / 1;
+} */
+
+.startWrapper {
+  width: 780px;
+  margin: 0 auto;
+  display: block;
+  margin: 0 auto;
 }
+
 .startImg {
   background-color: black;
 }
@@ -103,7 +113,7 @@ body {
   max-height: 100%;
   opacity: 0.4;
 }
-
+/* 
 .headerText h1 {
   font-family: "Gloria Hallelujah", sans-serif;
   font-size: 3em;
@@ -117,21 +127,7 @@ body {
   display: block;
   margin: 0 auto;
 }
-
-.startBtn {
-  font-family: "Gloria Hallelujah", sans-serif;
-  font-size: 1.5em;
-  text-align: center;
-  color: white;
-  background-color: #45b899;
-  border: none;
-  width: 400px;
-  height: 45px;
-  border-radius: 10pt;
-  margin: auto;
-  margin-top: 500px;
-  opacity: 0.9;
-}
+ */
 /* user page */
 .userheader {
   text-align: center;

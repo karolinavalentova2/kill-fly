@@ -5,16 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link href="start-screen.css" rel="stylesheet" />
+    <link href="soup.css" rel="stylesheet" />
+    <link href="overlay.css" rel="stylesheet" />
     <title>Fly Smacker</title>
   </head>
   <body>
     <div class="navbar">
-      <img
-        src="http://petragergely.dk/kea/imgs/flylogo.png"
-        alt="logo"
-        height="80"
-        id="logo"
-      />
+      <img src="http://petragergely.dk/kea/imgs/flylogo.png" alt="logo" height="80" id="logo" />
       <div id="slogan">
         <p>More than 300 games for 9-year olds</p>
       </div>
@@ -27,13 +24,15 @@
       <div id="mobileMenu"></div>
     </div>
 
-    <div class="start_wrapper">
-      <div class="startImg"><img src="img/background.png" /></div>
-      <div class="headerText">
-        <h1>Smack the flies before they eat the cake!</h1>
+    <div class="overlayWrapper">
+      <!--<div class="startImg"><img src="img/background.png" /></div> -->
+      <div class="startWrapper">
+        <!-- <div class="headerText"> -->
+        <h1 class="centered">Smack the flies before they eat the cake!</h1>
+        <!-- </div> -->
+        <button class="startBtn">Start</button>
+        <a href="#">Already have an account? Click here to Log In</a>
       </div>
-      <button class="startBtn">Start</button>
-      <a>Already have an account? Click here to Log In</a>
     </div>
     <script src="start-screen.js"></script>
   </body>
