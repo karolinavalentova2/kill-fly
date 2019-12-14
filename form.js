@@ -40,3 +40,16 @@ function post() {
         }, 3000);
       });
   }
+
+// FLOATING LABELS ANIMATION
+
+const labels = document.querySelector("label");
+const inputFields = document.querySelector("input");
+
+inputFields.addEventListener("focus", () => {
+  labels.classList.add("floatingLabel");
+});
+
+inputFields.addEventListener("blur", () => {
+  labels.classList.remove("floatingLabel");
+});

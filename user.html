@@ -28,8 +28,8 @@
     </div>
     <h1 class="centered yellow">Your Profile</h1>
     <div id="avatarImg"></div>
-    <div class="userWrapper">
-      <div class="userFields">
+<!--    <div class="userWrapper">
+      <div class="userFields"> -->
         <form id="userInfo">
           <fieldset>
         <legend>Account information:</legend>
@@ -42,20 +42,28 @@
           </fieldset>
           <fieldset>
         <legend>Change your password:</legend>
-          <input type="text" name="password" placeholder="Your password" /><br />
-          <input type="text" name="repeatpassword" placeholder="Confirm your password" /><br />
+        <label for="password">Your password</label>
+          <input type="password" name="password" />
+          <label for="repeatpassword">Confirm your password</label>
+          <input type="password" name="repeatpassword"/>
           </fieldset>
           <fieldset>
         <legend>Update your billing information:</legend>
-          <input type="text" name="fullname" placeholder="Full name" /><br />
-          <input type="text" name="country" placeholder="Country" /><br />
-          <input type="text" name="state" placeholder="Country / State" /><br />
-          <input type="text" name="zip" placeholder="ZIP code" /><br />
-          <input type="text" name="city" placeholder="City" /><br />
-          <input type="text" name="adress" placeholder="Address" /><br />
+        <label for="fullname">Full name</label>
+          <input type="text" name="fullname" />
+          <label for="country">Country</label>
+          <input type="text" name="country" />
+          <label for="state">State / Province</label>
+          <input type="text" name="state" />
+          <label for="zip">ZIP code</label>
+          <input type="text" name="zip" />
+          <label for="city">City</label>
+          <input type="text" name="city" />
+          <label for="address">Address</label>
+          <input type="text" name="adress" />
         </fieldset>
       <button>Update profile</button>
       </form>
-    </div>
+<script src="form.js"></script>
   </body>
 </html>

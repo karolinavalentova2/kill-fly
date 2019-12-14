@@ -1,4 +1,4 @@
-#avatarImg {
+/* #avatarImg {
   border-radius: 50%;
   width: 200px;
   height: 200px;
@@ -13,7 +13,6 @@ legend {
   font-family: "Gloria Hallelujah", sans-serif;
   text-align: left;
   font-size: 1.3em;
-  margin: 50px 0 0 0;
 }
 
 .userFields input {
@@ -31,11 +30,18 @@ legend {
 #userInfo > fieldset {
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  margin: 50px auto;
   border: none;
 }
+
+label {
+  margin: 50px auto -90px auto;
+  pointer-events: none;
+}
+
 .userWrapper {
   max-width: 900px;
   margin: auto;
   text-align: center;
 }
+ */
