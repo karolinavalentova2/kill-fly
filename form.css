@@ -48,7 +48,6 @@ label {
     font-family: "Gloria Hallelujah", sans-serif;
     font-size: 1.8em;
     z-index: 5;
-    margin: 50px auto -90px auto;
     pointer-events: none;
     text-align: center;
   }
@@ -104,7 +103,10 @@ button[type="submit"] {
     border: none;
   }
   
-/* --- LABEL ANIMATION --- */
+/* --- LABEL ANIMATION --- 
+label {
+        margin: 50px auto -90px auto;
+}
 
 .floatingLabel {
     animation: floatUp .3s forwards;
@@ -116,5 +118,5 @@ button[type="submit"] {
         font-size: 1em;
     }
 }
-  
+*/
   

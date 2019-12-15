@@ -41,7 +41,9 @@ function post() {
       });
   }
 
+/*
 // FLOATING LABELS ANIMATION
+
 
 const labels = document.querySelector("label");
 const inputFields = document.querySelector("input");
@@ -53,3 +55,4 @@ inputFields.addEventListener("focus", () => {
 inputFields.addEventListener("blur", () => {
   labels.classList.remove("floatingLabel");
 });
+*/
