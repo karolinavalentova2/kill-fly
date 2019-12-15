@@ -1,6 +1,7 @@
-const menu = document.querySelector(".menu");
+const menu = document.querySelector("nav");
+const mobileMenu = document.querySelector("#mobileMenu");
 
-document.querySelector("#mobileMenu").addEventListener("click", displayMenu);
+mobileMenu.addEventListener("click", displayMenu);
 
 function displayMenu() {
   if (menu.style.display === "none") {
@@ -10,5 +11,6 @@ function displayMenu() {
   } else {
     menu.style.display = "none";
     document.querySelector("#mobileMenu").style.background = "url('http://petragergely.dk/kea/imgs/menu.png')";
+    document.querySelector("#mobileMenu").style.backgroundSize = "cover";
   }
 }

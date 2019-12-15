@@ -1,5 +1,6 @@
 /* random stuff that we need to sort out into their respective css files later */
 @import url("https://fonts.googleapis.com/css?family=Gloria+Hallelujah&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
 * {
   box-sizing: border-box;
@@ -20,12 +21,12 @@ body {
 }
 
 p,
-span,
+span, 
 h1,
-h2,
-button {
-  color: white;
-  font-family: "Gloria Hallelujah", sans-serif;
+ h2, 
+ button {
+color: white;
+font-family: "Gloria Hallelujah", sans-serif; 
 }
 
 p,
@@ -35,7 +36,7 @@ a {
 }
 
 button {
-  height: 86px;
+  height: 100px;
   background: #45b899;
   -webkit-appearance: unset;
   border: none;

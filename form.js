@@ -32,27 +32,12 @@ function post() {
       .then(data => {
         //showToast();
         signUpForm.reset();
-        signUpBtn.textContent = "Successfully added";
-        signUpBtn.style.backgroundColor = "green";
-        setTimeout( function() {
-            signUpBtn.textContent = "Add user";
-            signUpBtn.style.backgroundColor = "#FA983A";
-        }, 3000);
       });
   }
 
-/*
-// FLOATING LABELS ANIMATION
-
-
-const labels = document.querySelector("label");
-const inputFields = document.querySelector("input");
-
-inputFields.addEventListener("focus", () => {
-  labels.classList.add("floatingLabel");
-});
-
-inputFields.addEventListener("blur", () => {
-  labels.classList.remove("floatingLabel");
-});
-*/
+//TODO
+//const usernameField = 
+//const usernameNotUnique = document.querySelector("#usernameNotUnique")
+//if username is taken
+//usernameField.style.background = "#ef4d4e";
+//#usernameNotUnique.style.display = "block";

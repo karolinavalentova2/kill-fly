@@ -24,13 +24,13 @@
   text-align: center;
 }
 
-.menu {
+nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.menu > a {
+nav > a {
   font-family: "Gloria Hallelujah", sans-serif;
   color: white;
   text-decoration: none;
@@ -38,7 +38,7 @@
   transition: 0.2s ease-in-out;
 }
 
-.menu > a:hover,
+nav > a:hover,
 #login:hover {
   color: #45b899;
 }
@@ -48,7 +48,7 @@
   transition: 0.2s ease-in-out;
 }
 
-#mobileMenuIcon {
+#mobileMenu {
   display: none;
 }
 
@@ -66,20 +66,23 @@
 
 @media all and (max-width: 450px) {
   #mobileMenu {
+    display: block;
     width: 45px;
     height: 45px;
     margin: 0 auto;
     background: url("http://petragergely.dk/kea/imgs/menu.png");
     background-size: cover;
+    cursor: pointer;
   }
 
-  .menu {
+  nav {
     display: none;
   }
 }
 
 @media all and (max-width: 400px) {
-  .menu {
+  nav {
     flex-direction: column;
   }
 }
+

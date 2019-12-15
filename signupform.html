@@ -7,7 +7,6 @@
     <title>Document</title>
     <link rel="stylesheet" href="form.css">
     <link rel="stylesheet" href="soup.css">
-    <link rel="stylesheet" href="general.css">
     <link rel="stylesheet" href="overlay.css">
 </head>
 <body>
@@ -20,11 +19,14 @@
       <p class="centered">Sign up, so we can save your progress:</p>
       <form id ="signUp">
         <label  for="name">Your username:</label>
-        <input type="text" name="name" required>
+        <input type="text" name="name" placeholder="bla" pattern="[a-zA-Z0-9]+" required>
+        <p class="errorMsg" id="usernameNotUnique">This name is already taken</p>
+        <p class="errorMsg" id="usernameInvalid">Only letters of the English alphabet and numbers are allowed.</p>
         <label for="email">Your e-mail address:</label>
-        <input type="text" name="email" required>
+        <input type="email" name="email" placeholder="bla"  required>
+        <p class="errorMsg">This not a valid e-mail address.</p>
         <label for="password">Your password:</label>
-        <input type="password" name="password" required>
+        <input type="password" name="password"  placeholder="bla" required>
         <div class="checkboxWrapper">
         <input type="checkbox" name="newsletter"> <label for="newsletter">Can we send you newsletter?</label><br>
         </div>

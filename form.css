@@ -21,7 +21,7 @@ input {
     text-align: center;
 }
 
-input[type="text"], input[type="password"] {
+input[type="text"], input[type="password"], input[type="email"] {
     font-family: "Gloria Hallelujah", sans-serif;
     font-size: 1.5em;
     color: #222222;
@@ -70,6 +70,10 @@ button[type="submit"] {
     margin: 50px auto;
 }
 
+#signUp > input::placeholder {
+    color: white;
+}
+
 /* --- SPECIFIC CHANGES TO USER PROFILE FORM --- */
 #avatarImg {
     border-radius: 50%;
@@ -87,36 +91,52 @@ button[type="submit"] {
     text-align: left;
     font-size: 1.3em;
   }
-  
-  #userInfo > fieldset > input {
-    border: none;
-    display: block;
-    background-color: #373948;
-    color: #9d9d9d;
-  }
-  
-  #userInfo > fieldset {
+
+    #userInfo > fieldset {
     display: flex;
     flex-direction: column;
     width: 600px;
     margin: 50px auto;
     border: none;
   }
+
+  #userInfo > fieldset > input {
+    border: none;
+    display: block;
+    background-color: #373948;
+    color: #9d9d9d;
+  }
+
+  #userInfo > fieldset > input::placeholder {
+      color: #373948;
+}
   
-/* --- LABEL ANIMATION --- 
-label {
-        margin: 50px auto -90px auto;
+/* --- ERROR MESSAGES --- */
+.errorMsg {
+    display: none;
+    font-size: 1em;
+    font-family: "Roboto", sans-serif;
+    color: #ef4d4e;
 }
 
-.floatingLabel {
-    animation: floatUp .3s forwards;
+input:invalid:not(:placeholder-shown):not(:focus) {
+    background: #ef4d4e;
 }
 
-@keyframes floatUp {
-    100% {
-        margin: 30px auto -45px auto;
-        font-size: 1em;
-    }
-}
-*/
+input:invalid:not(:placeholder-shown):not(:focus) ~ .errorMsg {
+    display: block;
+  }
   
+
+/* --- UNDER 600PX --- */
+@media all and (max-width: 600px) {
+  form, #userInfo > fieldset {
+      width: 100%;
+      padding: 1em;
+    
+  }
+
+  legend {
+      text-align: center;
+  }
+}
