@@ -28,16 +28,9 @@
     </header>
     <main class="main-cart-container">
         <h1>Your cart</h1>
-        <section class="section-container">
-            <div class="section-content">
-                <div id="cartImg">
-                    <img src="assets/gold_smacker.png" alt="">
-                </div>
-                <h3 class="yellow">Golden Smacker</h3>
-                <h3>3$</h3>
-            </div>
-            <hr>
-            <h3 class="end">Total: <span id="totalPrice">2</span>$</h3>
+        <section class="section-container" id="productsContainer">
+
+
         </section>
         <section class="cart-form-container">
             <h3 class="yellow">Please fill in your billing information:</h3>
@@ -74,7 +67,7 @@
                 <label for="newsletter">I agree to the <span class="blue">Terms of Contract</span>.</label
                 ><br />
                 </div>
-                <button type="submit" class="signUpBtn">
+                <button class="signUpBtn" id="payButton">
                     Buy
                 </button>
             </form>
@@ -82,4 +75,13 @@
     </main>
     <script src="store.js"></script>
 </body>
+<template id="productTemplate">
+    <div class="section-content">
+        <div class="cartImg">
+            <img src="assets/gold_smacker.png" alt="">
+        </div>
+        <h3 class="yellow">Golden Smacker</h3>
+        <h3>3$</h3>
+    </div>
+</template>
 </html>

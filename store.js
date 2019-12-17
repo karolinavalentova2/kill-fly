@@ -13,7 +13,19 @@ function displayMenu() {
 }
 
 window.onload = () => {
-    doGetShopEntries();
+    if(document.title === 'Store') {
+        doGetShopEntries();
+    } else if(document.title === 'Cart') {
+        doLoadCartProducts();
+
+        document.getElementById('payButton').onclick = (event) => {
+            event.preventDefault();
+
+            localStorage.removeItem('CURRENT_ITEMS_IN_BASKET');
+
+            window.location.href = `thankyou.html`;
+        }
+    }
 };
 
 function doGetShopEntries() {
@@ -63,4 +75,38 @@ function doAddItemToCart(item) {
         newBasket.push(item);
         localStorage.setItem('CURRENT_ITEMS_IN_BASKET', JSON.stringify(newBasket));
     }
+}
+
+function doLoadCartProducts() {
+    const productTemplate = document.getElementById('productTemplate');
+    const productsContainer = document.getElementById('productsContainer');
+
+    let totalProductsPrice = 0;
+
+    let currentBasket = localStorage.getItem('CURRENT_ITEMS_IN_BASKET');
+    if(currentBasket) {
+        currentBasket = JSON.parse(currentBasket);
+
+        currentBasket.forEach((entry) => {
+             const { img, name_item, price } = entry;
+             const newProductTemplate = productTemplate.content.cloneNode(true);
+
+             newProductTemplate.children[0].children[0].children[0].src = img.guid;
+             newProductTemplate.children[0].children[1].textContent = name_item;
+             newProductTemplate.children[0].children[2].textContent = `${price}$`;
+
+             totalProductsPrice += parseFloat(price);
+
+             productsContainer.appendChild(newProductTemplate);
+        });
+
+        productsContainer.appendChild(document.createElement('hr'));
+        productsContainer.innerHTML += `<h3 class="end">Total: <span id="totalPrice">${totalProductsPrice}</span>$</h3>`
+
+        // document.getElementById('totalPrice').textContent = totalProductsPrice;
+    }
+}
+
+function doProcessPayment() {
+
 }
