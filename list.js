@@ -1,6 +1,6 @@
 "use strict";
 
-let entries = null;
+let entries = [];
 let SVGS = {};
 let SortBY = {
     lastSortingOrderItem: null,
@@ -184,7 +184,9 @@ function getAllEntries() {
         .then(e => {
             e.json().then((data) => {
                 if(data.length !== 0) {
-                    entries = [...data];
+                    data.forEach((entry) => {
+                        entries.push(sanitizeData(entry))
+                    });
                     data.forEach((entry) => {
                         addNewEntryToHTML(entry);
                     });
@@ -331,6 +333,17 @@ function doShowUserDeleteErrorToast() {
     };
 
     toastr["error"]("Only disabled user can be deleted");
+}
+
+function sanitizeData(entry){
+    if(!entry.edit) {
+        entry.edit = false;
+        updateUser(entry)
+        console.log('Data fixed on ', entry.email);
+    }
+
+    return entry;
+
 }
 
 document.body.onload = doStart;
