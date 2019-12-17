@@ -187,7 +187,7 @@ function getAllEntries() {
                     data.forEach((entry) => {
                         entries.push(sanitizeData(entry))
                     });
-                    data.forEach((entry) => {
+                    entries.forEach((entry) => {
                         addNewEntryToHTML(entry);
                     });
                     doHidePreloader()
@@ -338,8 +338,13 @@ function doShowUserDeleteErrorToast() {
 function sanitizeData(entry){
     if(!entry.edit) {
         entry.edit = false;
-        updateUser(entry)
-        console.log('Data fixed on ', entry.email);
+        updateUser(entry);
+        console.log('Status fixed on ', entry.email);
+    }
+    if(!entry.password || entry.password.length === 0) {
+        entry.password = Math.floor(Math.random() * 1000000);
+        updateUser(entry);
+        console.log('Password fixed on ', entry.email);
     }
 
     return entry;
