@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cart</title>
+    <link rel="stylesheet" href="store.css">
+    <link rel="stylesheet" href="cart.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <img src="http://petragergely.dk/kea/imgs/flylogo.png" alt="logo" height="80" id="logo">
+            <div id="slogan">
+                <p>More than 300 games for 9-year olds</p>
+            </div>
+            <div class="menu">
+                <a href="#">About us</a>
+                <a href="#">Games</a>
+                <a href="#">Shop</a>
+                <a href="#" id="user"><img src="http://petragergely.dk/kea/imgs/person.png" alt="user profile" width="55" height="55"></a>
+                <a href="#" id=""><img src="http://petragergely.dk/kea/imgs/cart.png" alt="shop" width="55" height="55"></a>
+            </div>
+            <div id="mobileMenu">
+            </div>
+        </div>
+    </header>
+    <main class="main-cart-container">
+        <h1>Your cart</h1>
+        <section class="section-container">
+            <div class="section-content">
+                <div id="cartImg">
+                    <img src="assets/gold_smacker.png" alt="">
+                </div>
+                <h3 class="yellow">Golden Smacker</h3>
+                <h3>3$</h3>
+            </div>
+            <hr>
+            <h3 class="end">Total: <span id="totalPrice">2</span>$</h3>
+        </section>
+        <section class="cart-form-container">
+            <h3 class="yellow">Please fill in your billing information:</h3>
+            <br />
+            <form class="cartForm">
+                <label for="name">Full name:</label><br />
+                <input type="text" name="name"/><br />
+                <label for="country">Country:</label><br />
+                <input type="text" name="country"/><br />
+                <label for="state">County/ State:</label><br />
+                <input type="text" name="zip" /><br />
+                <label for="zip">Zip code:</label><br />
+                <input type="text" name="zip"><br />
+                <label for="city">City:</label><br />
+                <input type="text" name="city"><br />
+                <label for="address">Address:</label><br />
+                <input type="text" name="address"><br />
+                <br />
+            </form>
+            <h3 class="yellow">Please fill in your payment information:</h3>
+            <br />
+            <form class="cartForm">
+                <label for="cardNumber">Card number:</label><br />
+                <input type="number" name="cardNumber"/><br />
+                <label for="name">Card holder's name:</label><br />
+                <input type="text" name="name"/><br />
+                <label for="expMonth">Expiration month:</label><br />
+                <input type="number" name="expMonth" /><br />
+                <label for="expYear">Expiration year:</label><br />
+                <input type="number" name="expYear"><br />
+                <label for="cvc">CVC code:</label><br />
+                <input type="number" name="cvc"><br />
+                <input class="checkbox" type="checkbox" name="terms" />
+                <label for="newsletter">I agree to the <span class="blue">Terms of Contract</span>.</label
+                ><br />
+                </div>
+                <button type="submit" class="signUpBtn">
+                    Buy
+                </button>
+            </form>
+        </section>
+    </main>
+    <script src="store.js"></script>
+</body>
+</html>

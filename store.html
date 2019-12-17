@@ -27,36 +27,22 @@
     </header>
     <main class="store-main-container">
         <h1>Shop</h1>
-        <div class="section-container">
-            <section>
-                <img class="smacker-img" src="assets/gold_smacker.png" alt="">
-                <h5>Golden smacker</h5>
-                <p>Smack flies quicker and more effectively thank to its bigger size. It also comes with blings. MANY blings!</p>
-                <div class="price-container">
-                    <div>2$</div>
-                    <button>Buy</button>
-                </div>
-            </section>
-            <section>
-                <img class="smacker-img" src="assets/gold_smacker.png" alt="">
-                <h5>Golden smacker</h5>
-                <p>Smack flies quicker and more effectively thank to its bigger size. It also comes with blings. MANY blings!</p>
-                <div class="price-container">
-                    <div>2$</div>
-                    <button>Buy</button>
-                </div>
-            </section>
-            <section>
-                <img class="smacker-img" src="assets/gold_smacker.png" alt="">
-                <h5>Golden smacker</h5>
-                <p>Smack flies quicker and more effectively thank to its bigger size. It also comes with blings. MANY blings!</p>
-                <div class="price-container">
-                    <div>2$</div>
-                    <button>Buy</button>
-                </div>
-            </section>
+        <div class="section-container" id="productsContainer">
+
         </div>
     </main>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="store.js"></script>
+    <template id="shopEntry">
+        <section>
+            <img class="smacker-img" src="" alt="">
+            <h5>Golden smacker</h5>
+            <p>Smack flies quicker and more effectively thank to its bigger size. It also comes with blings. MANY blings!</p>
+            <div class="price-container">
+                <div>2$</div>
+                <button>Buy</button>
+            </div>
+        </section>
+    </template>
 </body>
 </html>

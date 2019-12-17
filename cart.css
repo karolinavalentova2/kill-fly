@@ -1,0 +1,88 @@
+.main-cart-container {
+  background: #272a38;
+  width: 100%;
+  padding-bottom: 2rem;
+}
+.main-cart-container h1 {
+  color: #FCA91F;
+  font-family: "Gloria Hallelujah", sans-serif;
+  text-align: center;
+  font-size: 4rem;
+}
+.main-cart-container h3 {
+  color: white;
+  font-family: "Gloria Hallelujah", sans-serif;
+  font-size: 1.5rem;
+}
+.main-cart-container h3.yellow {
+  color: #FCA91F;
+}
+.main-cart-container h3.end {
+  text-align: end;
+}
+.main-cart-container .section-container {
+  background: #373948;
+  width: 70vw;
+  height: 20rem;
+  margin: 2rem auto;
+  padding: 2rem 3rem;
+  border-radius: 2rem;
+}
+.main-cart-container .section-container .section-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main-cart-container .section-container .section-content #cartImg {
+  width: 5rem;
+}
+.main-cart-container .section-container .section-content #cartImg img {
+  width: inherit;
+}
+.main-cart-container .section-container hr {
+  margin: 1rem auto;
+}
+.main-cart-container .cart-form-container {
+  width: 70vw;
+  margin: 3rem auto;
+}
+.main-cart-container .cart-form-container .cartForm {
+  width: 90%;
+  margin: auto;
+  max-width: 43rem;
+}
+.main-cart-container .cart-form-container .cartForm input {
+  margin: 0 auto 2rem auto;
+  background: #373948;
+  color: white;
+  width: 100%;
+  max-width: 38rem;
+  border-radius: 1rem;
+  border: none;
+  text-align: start;
+  padding: 1rem 2rem;
+}
+.main-cart-container .cart-form-container .cartForm label {
+  color: white;
+  font-family: "Gloria Hallelujah", sans-serif;
+  font-size: 1rem;
+}
+.main-cart-container .cart-form-container .cartForm button {
+  border-radius: 1rem;
+  border: none;
+  color: white;
+  background: #45b899;
+  font-family: "Gloria Hallelujah", sans-serif;
+  font-size: 2rem;
+  width: 90%;
+  margin: auto;
+  max-width: 43rem;
+}
+.main-cart-container .cart-form-container .cartForm .checkbox {
+  width: 4rem;
+}
+.main-cart-container .cart-form-container .cartForm .blue {
+  color: #45b899;
+}
+
+/*# sourceMappingURL=cart.css.map */
