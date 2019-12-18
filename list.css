@@ -253,4 +253,14 @@ main .aside-menu ul li div div.disabled {
   width: 20rem !important;
 }
 
+@media (max-width: 767px) {
+  aside {
+    display: none;
+  }
+
+  body, html {
+    overflow: visible;
+  }
+}
+
 /*# sourceMappingURL=list.css.map */

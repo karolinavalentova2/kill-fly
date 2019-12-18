@@ -304,3 +304,15 @@ main {
 #toast-container.toast-top-center > div, #toast-container.toast-bottom-center > div {
   width: 20rem!important;
 }
+
+
+
+@media (max-width: 767px) {
+  aside {
+      display: none;
+   }
+
+  body,html {
+    overflow: visible;
+  }
+}
