@@ -18,5 +18,8 @@
   "homepage": "https://github.com/karolinavalentova2/kill-fly#readme",
   "dependencies": {
     "toastr": "^2.1.4"
+  },
+  "devDependencies": {
+    "cssnano": "^4.1.10"
   }
 }

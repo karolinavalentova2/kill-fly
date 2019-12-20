@@ -24,10 +24,10 @@ async function doStart() {
 async function loadSVG() {
     try {
         SVGS = {
-            arrowBTN: await (await fetch("./assets/arrow.svg")).text(),
-            refreshBTN: await (await fetch("./assets/reset.svg")).text(),
-            preloaderSVG: await (await fetch("./assets/preloader.svg")).text(),
-            trashbinSVG: await (await fetch("./assets/trashbin.svg")).text(),
+            arrowBTN: await (await fetch("assets/arrow.svg")).text(),
+            refreshBTN: await (await fetch("assets/reset.svg")).text(),
+            preloaderSVG: await (await fetch("assets/preloader.svg")).text(),
+            trashbinSVG: await (await fetch("assets/trashbin.svg")).text(),
         };
 
     } catch(error) {
