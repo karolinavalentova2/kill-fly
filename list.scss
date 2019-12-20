@@ -292,6 +292,10 @@ main {
   color: white!important;
 }
 
+.table-arrow-svg {
+  cursor: pointer;
+}
+
 // npm toast message, source: https://www.npmjs.com/package/toastr
 
 #toast-container > div {

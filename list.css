@@ -242,6 +242,10 @@ main .aside-menu ul li div div.disabled {
   color: white !important;
 }
 
+.table-arrow-svg {
+  cursor: pointer;
+}
+
 #toast-container > div {
   -moz-box-shadow: 0 0 0 #999999 !important;
   -webkit-box-shadow: 0 0 0 #999999 !important;

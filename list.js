@@ -169,8 +169,8 @@ function doRegisterRefreshBtn() {
     }
 }
 
-function getAllEntries() {
-    doShowPreloader();
+async function getAllEntries(showPre = true) {
+    if(showPre) doShowPreloader();
     fetch("https://smackfly-2fd1.restdb.io/rest/users-fly-smacker", {
         method: "get",
         headers: {
@@ -184,9 +184,11 @@ function getAllEntries() {
         .then(e => {
             e.json().then((data) => {
                 if(data.length !== 0) {
+                    entries = [];
                     data.forEach((entry) => {
                         entries.push(sanitizeData(entry))
                     });
+                    doClearEntriesTable();
                     entries.forEach((entry) => {
                         addNewEntryToHTML(entry);
                     });
@@ -200,8 +202,8 @@ function getAllEntries() {
         });
 }
 
-function updateUser(userInfo) {
-    doShowPreloader();
+function updateUser(userInfo, hidePre = false) {
+    // doShowPreloader();
     fetch(`https://smackfly-2fd1.restdb.io/rest/users-fly-smacker/${userInfo._id}`, {
         method: "put",
         headers: {
@@ -215,7 +217,7 @@ function updateUser(userInfo) {
     })
         .then(e => {
             console.log('User updated');
-            doHidePreloader();
+            if(hidePre) doHidePreloader();
         })
         .catch(e => {
             console.log(e);
@@ -224,6 +226,7 @@ function updateUser(userInfo) {
 
 function deleteUser(userInfo) {
     doShowPreloader();
+    doCloseUserRemoveModal();
     fetch(`https://smackfly-2fd1.restdb.io/rest/users-fly-smacker/${userInfo._id}`, {
         method: "delete",
         headers: {
@@ -237,9 +240,7 @@ function deleteUser(userInfo) {
     })
         .then(e => {
             doClearEntriesTable();
-            getAllEntries();
-            doCloseUserRemoveModal();
-            doHidePreloader();
+            getAllEntries(false);
         })
         .catch(e => {
             console.log(e);
@@ -252,8 +253,9 @@ function doToggleUserState(userInfo, checkbox) {
     userInfo.edit = !!checkbox.checked;
 
     checkbox.parentElement.children[2].textContent = checkbox.checked ? 'Disabled' : 'Active';
+    doShowPreloader();
+    updateUser(userInfo, true);
 
-    updateUser(userInfo);
 }
 function addNewEntryToHTML(entry) {
     const entryTemplate = document.getElementById('entryTemplate');
