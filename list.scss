@@ -35,30 +35,44 @@ main {
 
   table {
     border-spacing: 0;
-    width: 100%;
-    color: $white-color;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
 
     thead {
-      height: 5rem;
+      height: 4rem;
       background: $dark-grey-color;
       width: 100vw;
 
+      tr {
+        width: 100%;
+        display: flex;
+        padding: 0.5rem 0;
+      }
+
       th {
         text-align: start;
-        vertical-align: bottom;
         padding: 1rem 3rem;
+        flex: 1;
       }
     }
 
     tbody {
       background: $grey-color;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      width: 92vw;
+      height: 86vh;
 
       tr {
-        height: 3rem;
+        height: 3.5rem;
+        width: 110%;
+        display: flex;
 
         td {
-          border-bottom: 1px solid $green-color;
-          padding-left: 3rem;
+          border-bottom: 1px solid #45b798;
+          padding: 1rem 0 1rem 3rem;
+          flex: 1;
 
           .trashbinSVG {
             width: 1.2rem;

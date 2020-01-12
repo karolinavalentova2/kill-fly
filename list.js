@@ -95,19 +95,19 @@ function sortBy(arrowSVG, typeOfSort) {
 
     let sortBY;
     switch (typeOfSort) {
-        case 0: { // Sort by name
-            sortBY = 'name';
-            break;
-        }
-        case 1: { // Sort by name
-            sortBY = 'email';
-            break;
-        }
-        case 2: { // Sort by name
+        case 0: { // Sort by id
             sortBY = 'id';
             break;
         }
-        case 3: { // Sort by name
+        case 1: { // Sort by name
+            sortBY = 'name';
+            break;
+        }
+        case 2: { // Sort by email
+            sortBY = 'email';
+            break;
+        }
+        case 3: { // Sort by score
             sortBY = 'score';
             break;
         }
@@ -120,11 +120,21 @@ function sortBy(arrowSVG, typeOfSort) {
     if(entries.length > 0) {
         const tmpSortedEntries = entries.sort((elemA, elemB) => {
             if(currentSortOrder === 'DESC') {
-                if(elemA[sortBY] < elemB[sortBY]) return 1;
-                else return -1;
+                if(sortBY !== 'email' && sortBY !== 'name') {
+                    if(parseInt(elemA[sortBY]) < parseInt(elemB[sortBY])) return 1;
+                    else return -1;
+                } else {
+                    if((elemA[sortBY]).toLowerCase() < (elemB[sortBY]).toLowerCase()) return 1;
+                    else return -1;
+                }
             } else if(currentSortOrder === 'ASC') {
-                if(elemA[sortBY] > elemB[sortBY]) return 1;
-                else return -1;
+                if(sortBY !== 'email' && sortBY !== 'name') {
+                    if(parseInt(elemA[sortBY]) > parseInt(elemB[sortBY])) return 1;
+                    else return -1;
+                } else {
+                    if((elemA[sortBY]).toLowerCase() > (elemB[sortBY]).toLowerCase()) return 1;
+                    else return -1;
+                }
             }
         });
 
@@ -190,6 +200,7 @@ async function getAllEntries(showPre = true) {
                     });
                     doClearEntriesTable();
                     entries.forEach((entry) => {
+                        console.table(entry);
                         addNewEntryToHTML(entry);
                     });
                     doHidePreloader()
@@ -347,6 +358,11 @@ function sanitizeData(entry){
         entry.password = Math.floor(Math.random() * 1000000);
         updateUser(entry);
         console.log('Password fixed on ', entry.email);
+    }
+    if(!entry.score || entry.score.length < 0) {
+        entry.score = 0;
+        updateUser(entry);
+        console.log('Score fixed on ', entry.email);
     }
 
     return entry;
